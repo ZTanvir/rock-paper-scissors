@@ -3,6 +3,7 @@
 let userWon = document.querySelector(".player-won");
 let computerwon = document.querySelector(".computer-won");
 let totalTie = document.querySelector(".total-tie");
+let allBtn = document.querySelectorAll(".btn")
 
 // computerPlay return the option select by computer
 
@@ -69,11 +70,17 @@ let oneRoundPlay = (userInput, computerInput) => {
         }
     }
 };
-
+//convert allBtn from nodeList to array
+allBtn = [...allBtn]
+// add event listner to the btn
+allBtn.forEach(btn => btn.addEventListener("click",function(e){
+    console.log(e.target);
+}))
 // Test oneRoundPlay() function
 // console.log(oneRoundPlay("Scissors", computerPlay()));
 
 // Play the game
+/*
 let game = () => {
     let playerWon = 0;
     let computerWon = 0;
@@ -103,5 +110,6 @@ let game = () => {
     console.log("tie:", tie);
     totalTie.textContent = tie;
 };
+*/
 // Start the game :)
 // game();
