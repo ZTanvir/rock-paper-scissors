@@ -3,8 +3,11 @@
 let userWon = document.querySelector(".player-won");
 let computerwon = document.querySelector(".computer-won");
 let totalTie = document.querySelector(".total-tie");
-let allBtn = document.querySelectorAll(".btn")
-
+let allBtn = document.querySelectorAll(".btn");
+// Game points
+let playerWon = 0;
+let computerWon = 0;
+let tie = 0;
 // computerPlay return the option select by computer
 
 let computerPlay = () => {
@@ -71,45 +74,42 @@ let oneRoundPlay = (userInput, computerInput) => {
     }
 };
 //convert allBtn from nodeList to array
-allBtn = [...allBtn]
-// add event listner to the btn
-allBtn.forEach(btn => btn.addEventListener("click",function(e){
-    console.log(e.target);
-}))
-// Test oneRoundPlay() function
-// console.log(oneRoundPlay("Scissors", computerPlay()));
-
-// Play the game
-/*
-let game = () => {
-    let playerWon = 0;
-    let computerWon = 0;
-    let tie = 0;
-
+allBtn = [...allBtn];
+let game = (userSelect) => {
     // Total round play
-    for (let i = 0; i < 5; i++) {
-        // Get user and computer choice
-        let userChoice = prompt("Choose rock,paper,scissors:");
-        let computerChoice = computerPlay();
-        // Result on one round
-        let oneRoundResult = oneRoundPlay(userChoice, computerChoice);
-        // Prepare point based on oneRoundResult
-        if (oneRoundResult == "won") {
-            playerWon++;
-        } else if (oneRoundResult == "tie") {
-            tie++;
-        } else if (oneRoundResult == "lose") {
-            computerWon++;
-        }
+    // Get user and computer choice
+    let userChoice = userSelect;
+    let computerChoice = computerPlay();
+    // Result on one round
+    let oneRoundResult = oneRoundPlay(userChoice, computerChoice);
+    // Prepare point based on oneRoundResult
+    if (oneRoundResult == "won") {
+        playerWon++;
+    } else if (oneRoundResult == "tie") {
+        tie++;
+    } else if (oneRoundResult == "lose") {
+        computerWon++;
     }
-    //   Result
-    console.log("playerWon:", playerWon);
+    if (playerWon == 5) {
+        playerWon = 0;
+        computerWon = 0;
+        tie = 0;
+    } else if (computerWon == 5) {
+        playerWon = 0;
+        computerWon = 0;
+        tie = 0;
+    }
     userWon.textContent = playerWon;
-    console.log("computerWon:", computerWon);
     computerwon.textContent = computerWon;
-    console.log("tie:", tie);
     totalTie.textContent = tie;
 };
-*/
-// Start the game :)
-// game();
+// add event listner to the btn
+allBtn.forEach((btn) =>
+    btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        let userChoice = btn.dataset.key;
+        console.log(userChoice);
+        //btn.classList.add("test");
+        game(userChoice);
+    })
+);
