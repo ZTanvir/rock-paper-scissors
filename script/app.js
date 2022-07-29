@@ -4,12 +4,13 @@ let userWon = document.querySelector(".player-won");
 let computerwon = document.querySelector(".computer-won");
 let totalTie = document.querySelector(".total-tie");
 let allBtn = document.querySelectorAll(".btn");
+
 // Game points
 let playerWon = 0;
 let computerWon = 0;
 let tie = 0;
-// computerPlay return the option select by computer
 
+// computerPlay return the option select by computer
 let computerPlay = () => {
     // Computer all choose option
     let computerAllOptions = "rock,paper,scissors";
@@ -22,8 +23,8 @@ let computerPlay = () => {
     // return the selected option by computer
     return computerChoice;
 };
-// Play one round of rock,paper,scissors
 
+// Play one round of rock,paper,scissors
 let oneRoundPlay = (userInput, computerInput) => {
     // Take userInput and convert it to lowercase
     userInput = userInput.toLowerCase();
@@ -73,9 +74,12 @@ let oneRoundPlay = (userInput, computerInput) => {
         }
     }
 };
+
 //convert allBtn from nodeList to array
 allBtn = [...allBtn];
 let game = (userSelect) => {
+    result_bord = document.querySelector(".result-bord");
+    bord = document.querySelectorAll("h1");
     // Total round play
     // Get user and computer choice
     let userChoice = userSelect;
@@ -90,18 +94,26 @@ let game = (userSelect) => {
     } else if (oneRoundResult == "lose") {
         computerWon++;
     }
+    userWon.textContent = playerWon;
+    computerwon.textContent = computerWon;
+    totalTie.textContent = tie;
     if (playerWon == 5) {
         playerWon = 0;
         computerWon = 0;
         tie = 0;
+        bord.forEach((item) => result_bord.removeChild(item));
+        let winner = document.createElement("h1");
+        winner.textContent = "Player won";
+        result_bord.append(winner);
     } else if (computerWon == 5) {
         playerWon = 0;
         computerWon = 0;
         tie = 0;
+        bord.forEach((item) => result_bord.removeChild(item));
+        let winner = document.createElement("h1");
+        winner.textContent = "Computer won";
+        result_bord.append(winner);
     }
-    userWon.textContent = playerWon;
-    computerwon.textContent = computerWon;
-    totalTie.textContent = tie;
 };
 // add event listner to the btn
 allBtn.forEach((btn) =>
