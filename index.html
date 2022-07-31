@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External Css file -->
+    <link rel="stylesheet" href="./style/style.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-    <div class="result-bord">
-        <h1>Player Won: <span class="player-won">0</span></h1>
-        <h1>Computer Won: <span class="computer-won">0</span></h1>
-        <h1>Tie: <span class="total-tie">0</span></h1>
-    </div>
-    
-    <div class="btns">
-        <div data-key="rock" class="btn">
-            <span>Rock</span>
+    <div class="container">
+        <h1>Just Press a button to play!</h1>
+        <div class="btns">
+            <div data-key="rock" class="btn">
+                <span>Rock</span>
+            </div>
+            <div data-key="paper" class="btn">
+                <span>Papers</span>
+            </div>
+            <div data-key="scissors" class="btn">
+                <span>Scissors</span>
+            </div>
         </div>
-        <div data-key="paper" class="btn">
-            <span>Papers</span>
+        <div class="single-round-result">
+            <div class="user-result"></div>
+            <div class="computer-choose"></div>
         </div>
-        <div data-key="scissors" class="btn">
-            <span>Scissors</span>
+        <hr>
+        <div class="final-result-bord">
+            <p>Player Won: <span class="player-won">0</span></p>
+            <p>Computer Won: <span class="computer-won">0</span></p>
+            <p>Tie: <span class="total-tie">0</span></p>
         </div>
     </div>
     <script src="./script/app.js"></script>

@@ -78,8 +78,8 @@ let oneRoundPlay = (userInput, computerInput) => {
 //convert allBtn from nodeList to array
 allBtn = [...allBtn];
 let game = (userSelect) => {
-    result_bord = document.querySelector(".result-bord");
-    bord = document.querySelectorAll("h1");
+    result_bord = document.querySelector(".final-result-bord");
+    bord = document.querySelectorAll("p");
     // Total round play
     // Get user and computer choice
     let userChoice = userSelect;

@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+body {
+    background-color: #f6f6f6;
+}
+
+.container {
+    background-color: white;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    gap: 15px;
+}
+
+.btn {
+    border: 3px solid lightslategray;
+    padding: 30px 60px;
+}
+
+.btn:hover {
+    box-shadow: 5px 5px 10px rgba(48, 47, 47, .3);
+}
+
+.single-round-result {
+    min-height: 30vh;
+}
+
+.final-result-bord {
+    display: flex;
+    column-gap: 50px;
+}
