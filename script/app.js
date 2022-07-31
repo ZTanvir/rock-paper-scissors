@@ -30,6 +30,11 @@ let oneRoundPlay = (userInput, computerInput) => {
     userInput = userInput.toLowerCase();
     console.log("User choose:", userInput);
     console.log("Computer choose:", computerInput);
+    let computerChooseEl = document.querySelector(".computer-choose");
+    computerChooseEl.textContent =
+        "The computer choose:" +
+        computerInput[0].toUpperCase() +
+        computerInput.slice(1);
     // Check userInput vs Computer Input the game logic is
     // rock > scissors,paper > rock , scissors > paper
     // print is the user won or lose based on the game logic
@@ -87,11 +92,19 @@ let game = (userSelect) => {
     // Result on one round
     let oneRoundResult = oneRoundPlay(userChoice, computerChoice);
     // Prepare point based on oneRoundResult
+    let userResultMessage = document.querySelector(".user-result");
+
     if (oneRoundResult == "won") {
+        userResultMessage.textContent = "You won!";
+        userResultMessage.classList.add("win");
         playerWon++;
     } else if (oneRoundResult == "tie") {
+        userResultMessage.textContent = "Draw!";
+        userResultMessage.classList.add("draw");
         tie++;
     } else if (oneRoundResult == "lose") {
+        userResultMessage.textContent = "You lost";
+        userResultMessage.classList.add("lost");
         computerWon++;
     }
     userWon.textContent = playerWon;

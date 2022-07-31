@@ -60,9 +60,41 @@ body {
 
 .single-round-result {
     min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+}
+.user-result{
+    min-width: 200px;
+}
+.computer-choose{
+    text-align: center;
 }
 
 .final-result-bord {
     display: flex;
     column-gap: 50px;
+}
+
+.win,
+.lost,
+.draw {
+    padding: 20px 40px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.win {
+    background-color: green;
+}
+
+.lost {
+    background-color: red;
+}
+
+.draw {
+    background-color: rgb(87, 84, 84);
 }
