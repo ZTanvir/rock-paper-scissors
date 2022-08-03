@@ -1,5 +1,17 @@
+//get custom round user want to play
+let custom_round = document.getElementById("total_round")
+let startGameBtn = document.querySelector(".start-btn")
+startGameBtn.addEventListener("click",function(e){
+    // Convert user input from string to number
+    let total_match = Number(custom_round.value)
+    if(total_match > 0 && total_match <10){
+        rock_paper_scissors(total_match)
+    }
+    
+})
+
 // Rock paper scissors Game
-function rock_paper_scissors(){
+function rock_paper_scissors(round){
     let containerEl = document.querySelector(".container")
     //Select HTML Nodes
     let userWon = document.querySelector(".player-won");
@@ -118,7 +130,7 @@ function rock_paper_scissors(){
         totalTie.textContent = tie;
 
         // Total round one must play to determine the winner
-        if (playerWon == 5) {
+        if (playerWon == round) {
             playerWon = 0;
             computerWon = 0;
             tie = 0;
@@ -133,7 +145,7 @@ function rock_paper_scissors(){
             play_again_btn.classList.add("play-again-show")
             // Remove single match result from ui
             containerEl.removeChild(document.querySelector(".single-round-result"))
-        } else if (computerWon == 5) {
+        } else if (computerWon == round) {
             playerWon = 0;
             computerWon = 0;
             tie = 0;
@@ -155,7 +167,6 @@ function rock_paper_scissors(){
         btn.addEventListener("click", function (e) {
             e.preventDefault();
             let userChoice = btn.dataset.key;
-            console.log(userChoice);
             //btn.classList.add("test");
             game(userChoice);
         })
@@ -165,4 +176,3 @@ function rock_paper_scissors(){
         location.reload()
     })
 }
-rock_paper_scissors()

@@ -1,4 +1,5 @@
-html,body {
+html,
+body {
     box-sizing: border-box;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 .container {
-    background-color: rgb(235, 218, 218);
+    background-color: rgb(238, 230, 230);
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -68,10 +69,12 @@ body {
     row-gap: 10px;
     justify-content: center;
 }
-.user-result{
+
+.user-result {
     width: 250px;
 }
-.computer-choose{
+
+.computer-choose {
     text-align: center;
 }
 
@@ -101,10 +104,11 @@ body {
 .draw {
     background-color: rgb(87, 84, 84);
 }
-.play-again-hide{
-    display:none; 
+
+.play-again-hide {
+    display: none;
 }
 
-.play-again-show{
-    display:inline-block; 
+.play-again-show {
+    display: inline-block;
 }
