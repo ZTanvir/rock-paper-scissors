@@ -27,11 +27,14 @@ img {
 
 
 body {
-    background-color: #f6f6f6;
+    background-image: url(../image/multy_pattern.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .container {
-    background-color: white;
+    background-color: rgb(235, 218, 218);
     min-height: 80vh;
     display: flex;
     align-items: center;
