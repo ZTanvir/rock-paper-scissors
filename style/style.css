@@ -1,12 +1,12 @@
 html,
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body,
@@ -17,98 +17,107 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-
 body {
-    background-image: url(../image/multy_pattern.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url(../image/multy_pattern.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.start-btn {
+  padding: 10px 20px;
+  margin: 5px;
 }
 
 .container {
-    background-color: rgb(238, 230, 230);
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 50px;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: rgb(238, 230, 230);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 30vh;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  gap: 15px;
 }
 
 .btn {
-    border: 3px solid lightslategray;
-    padding: 30px 60px;
+  border: 3px solid lightslategray;
+  padding: 30px 60px;
 }
 
 .btn:hover {
-    box-shadow: 5px 5px 10px rgba(48, 47, 47, .3);
+  box-shadow: 5px 5px 10px rgba(48, 47, 47, 0.3);
 }
 
 .single-round-result {
-    min-height: 30vh;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    justify-content: center;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: center;
 }
 
 .user-result {
-    width: 250px;
+  width: 250px;
 }
 
 .computer-choose {
-    text-align: center;
+  text-align: center;
 }
 
 .final-result-bord {
-    display: flex;
-    column-gap: 50px;
+  display: flex;
+  column-gap: 50px;
 }
 
 .win,
 .lost,
 .draw {
-    padding: 20px 40px;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 40px;
+  padding: 20px 40px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 40px;
 }
 
 .win {
-    background-color: green;
+  background-color: green;
 }
 
 .lost {
-    background-color: red;
+  background-color: red;
 }
 
 .draw {
-    background-color: rgb(87, 84, 84);
+  background-color: rgb(87, 84, 84);
 }
 
 .play-again-hide {
-    display: none;
+  display: none;
 }
 
 .play-again-show {
-    display: inline-block;
+  display: inline-block;
 }
